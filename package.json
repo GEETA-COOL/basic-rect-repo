@@ -13,9 +13,7 @@
     "test": "vitest",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"]
-  },
+  
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "react": "^19.2.6",
@@ -45,5 +43,11 @@
     "typescript-eslint": "^8.59.2",
     "vite": "^8.0.12",
     "vitest": "^4.1.6"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
