@@ -19,6 +19,8 @@ export default defineConfig([
       prettierConfig,
     ],
     plugins: {
+      'react-hooks': reactHooks,
+      '@typescript-eslint': tseslint,
       prettier: prettierPlugin,
     },
     languageOptions: {
