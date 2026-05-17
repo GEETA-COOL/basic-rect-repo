@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -11,5 +12,10 @@ export default defineConfig({
     // hey! 👋 over here
     globals: true,
     setupFiles: './tests/setup.ts', // assuming the test folder is in the root of our project
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
 } as UserConfig)
