@@ -1,11 +1,31 @@
-import { describe, it } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import App from './App'
 
-describe('App', () => {
-  it('renders the App component', () => {
+describe('App Component', () => {
+  it('renders the heading', () => {
     render(<App />)
 
-    screen.debug() // prints out the jsx in the App component unto the command line
+    const heading = screen.getByText(/hello world!/i)
+
+    expect(heading).toBeInTheDocument()
+  })
+
+  it('renders the paragraph text', () => {
+    render(<App />)
+
+    const paragraph = screen.getByText(/dcjdscnjdsncjdsncjds/i)
+
+    expect(paragraph).toBeInTheDocument()
+  })
+
+  it('renders the button', () => {
+    render(<App />)
+
+    const button = screen.getByRole('button', {
+      name: /click me/i,
+    })
+
+    expect(button).toBeInTheDocument()
   })
 })
